@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 2 JS.</title>
+</head>
+
+<body>
+  <script>
+    let nome = prompt("Digite o Nome da Primeira Pessoa")
+    let sobrenome = prompt("Digite o Sobrenome da Primeira Pessoa")
+    let idade1 = Number(prompt("Digite a Idade de(a) " + nome + ' ' + sobrenome))
+    let Nacionalidade = prompt("Digite onde Nasceu " + nome + ' ' + sobrenome)
+    let nome2 = prompt("Digite o Nome da Segunda Pessoa")
+    let sobrenome2 = prompt("Digite o Sobrenome da Segunda Pessoa")
+    let idade2 = Number(prompt("Digite a Idade de(a) " + nome2 + ' ' + sobrenome2))
+    let Nacionalidade2 = prompt("Digite onde Nasceu " + nome2 + ' ' + sobrenome2)
+
+    console.log('Registro da Primeira Pessoa: ');
+    console.log('Nome e Sobrenome: ' + nome + ' ' + sobrenome);
+    console.log('Idade : ' + idade1);
+    console.log('Nacionalidade:  ' + Nacionalidade);
+
+    console.log('Registro da Segunda Pessoa: ');
+    console.log('Nome e Sobrenome: ' + nome2 + ' ' + sobrenome2);
+    console.log('Idade : ' + idade2);
+    console.log('Nacionalidade:  ' + Nacionalidade2);
+
+    console.log('Comparação das Idades:')
+    console.log(nome + ' Tem ' + idade1 + ' Anos')
+    console.log(nome2 + ' Tem ' + idade2 + ' Anos')
+    if (idade1 < idade2) {
+      console.log(nome + ' É mais Novo(a)')
+    } else if (idade2 < idade1) {
+      console.log(nome2 + ' É mais Novo(a)')
+    } else {
+      console.log('Têm a mesma idade')
+    }
+
+    console.log('Comparação da Nacionalidades:')
+    if (Nacionalidade == Nacionalidade2) {
+      console.log(' São da mesma Nacionalidade.')
+    } else {
+      console.log(nome + ' Nasceu em ' + Nacionalidade + ' e ' + nome2 + ' Nasceu em ' + Nacionalidade2 + '.')
+    }
+  </script>
+</body>
+
+</html>
