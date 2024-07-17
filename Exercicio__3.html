@@ -4,50 +4,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Exercicio 2 JS.</title>
 </head>
 
 <body>
 
   <script>
-        function Pessoa(nome, sobrenome, idade, Nacionalidade) {
-      this.nome = nome;
-      this.sobrenome = sobrenome;
-      this.idade = idade;
-      this.Nacionalidade = Nacionalidade;
+    function Pessoa(nome, sobrenome, idade, Nacionalidade) {
+  this.nome = nome;
+  this.sobrenome = sobrenome;
+  this.idade = idade;
+  this.Nacionalidade = Nacionalidade;
+}
+
+function registrarPessoas() {
+  let pessoas = [];
+
+  while (true) {
+    let aceitar = prompt("Deseja registrar una persona s/n");
+
+    // Convertir la respuesta a minúsculas para hacer la comparación insensible a mayúsculas
+    aceitar = aceitar.toLowerCase();
+
+    if (aceitar === 's') {
+      let nome = prompt("Digite o Nome da Pessoa")
+      let sobrenome = prompt("Digite o Sobrenome da Pessoa")
+      let idade = Number(prompt("Digite a Idade de(a) " + nome + ' ' + sobrenome))
+      let Nacionalidade = prompt("Digite onde Nasceu " + nome + ' ' + sobrenome)
+
+      let pessoa = new Pessoa(nome, sobrenome, idade, Nacionalidade);
+      pessoas.push(pessoa);
+    } else if (aceitar === 'n') {
+      break; // Salir del bucle si la respuesta es 'n'
+    } else {
+      alert("Resposta inválida. Por favor, escreva 's' o 'n'.");
     }
+  }
 
-    function registrarPessoas() {
-      let pessoas = [];
+  console.log("Registros completos:");
+  console.log(pessoas);
 
-      while (true) {
-        let aceitar = prompt("Deseja registrar una persona s/n");
+  ComparaçãoDeIdade(pessoas);
 
-        // Convertir la respuesta a minúsculas para hacer la comparación insensible a mayúsculas
-        aceitar = aceitar.toLowerCase();
+}
+function   ComparaçãoDeIdade(pessoas) {
+  if (pessoas.length === 0) {
+    console.log("Não há pessoas registradas para validar.");
+    return;
+  }
 
-        if (aceitar === 's') {
-          let nome = prompt("Digite o Nome da Pessoa")
-          let sobrenome = prompt("Digite o Sobrenome da Pessoa")
-          let idade = Number(prompt("Digite a Idade de(a) " + nome + ' ' + sobrenome))
-          let Nacionalidade = prompt("Digite onde Nasceu " + nome + ' ' + sobrenome)
+  let pessoaMaisVelha = pessoas[0]; // Suponemos inicialmente que la primera persona es la más vieja
 
-          let pessoa = new Pessoa(nome, idade, Nacionalidade);
-          pessoas.push(pessoa);
-        } else if (aceitar === 'n') {
-          break; // Salir del bucle si la respuesta es 'no'
-        } else {
-          alert("Resposta inválida. Por favor, escreva 's' o 'n'.");
-        }
-      }
-
-
-      console.log("Registros completos:");
-      console.log(pessoas);
+  for (let i = 1; i < pessoas.length; i++) {
+    if (pessoas[i].idade > pessoaMaisVelha.idade) {
+      pessoaMaisVelha = pessoas[i];
     }
+  }
 
-    registrarPessoas();
-  </script>
+  console.log(`A pessoa mais velha é: ${pessoaMaisVelha.nome} ${pessoaMaisVelha.sobrenome}, tem ${pessoaMaisVelha.idade} anos.`);
+}
+
+registrarPessoas();
+
+</script>
+
 </body>
 
 </html>
