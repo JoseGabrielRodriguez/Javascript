@@ -23,7 +23,7 @@ function registrarPessoas() {
   while (true) {
     let aceitar = prompt("Deseja registrar una persona s/n");
 
-    // Convertir la respuesta a minúsculas para hacer la comparación insensible a mayúsculas
+   
     aceitar = aceitar.toLowerCase();
 
     if (aceitar === 's') {
@@ -35,7 +35,7 @@ function registrarPessoas() {
       let pessoa = new Pessoa(nome, sobrenome, idade, Nacionalidade);
       pessoas.push(pessoa);
     } else if (aceitar === 'n') {
-      break; // Salir del bucle si la respuesta es 'n'
+      break;
     } else {
       alert("Resposta inválida. Por favor, escreva 's' o 'n'.");
     }
@@ -53,7 +53,7 @@ function   ComparaçãoDeIdade(pessoas) {
     return;
   }
 
-  let pessoaMaisVelha = pessoas[0]; // Suponemos inicialmente que la primera persona es la más vieja
+  let pessoaMaisVelha = pessoas[0]; 
 
   for (let i = 1; i < pessoas.length; i++) {
     if (pessoas[i].idade > pessoaMaisVelha.idade) {
