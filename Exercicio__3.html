@@ -30,7 +30,7 @@ function registrarPessoas() {
       let nome = prompt("Digite o Nome da Pessoa")
       let sobrenome = prompt("Digite o Sobrenome da Pessoa")
       let idade = Number(prompt("Digite a Idade de(a) " + nome + ' ' + sobrenome))
-      let Nacionalidade = prompt("Digite onde Nasceu " + nome + ' ' + sobrenome)
+      let Nacionalidade = prompt("Digite Nacionalidade" + nome + ' ' + sobrenome)
 
       let pessoa = new Pessoa(nome, sobrenome, idade, Nacionalidade);
       pessoas.push(pessoa);
@@ -41,7 +41,7 @@ function registrarPessoas() {
     }
   }
 
-  console.log("Registros completos:");
+  console.log("Registros ja Feitos:");
   console.log(pessoas);
 
   ComparaçãoDeIdade(pessoas);
@@ -49,7 +49,7 @@ function registrarPessoas() {
 }
 function   ComparaçãoDeIdade(pessoas) {
   if (pessoas.length === 0) {
-    console.log("Não há pessoas registradas para validar.");
+    console.log("Não tem registros para validar.");
     return;
   }
 
